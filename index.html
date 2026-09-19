@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLTX4 Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span>CLTX4</span><small>MARKETPLACE</small></div>
+  <button id="cartBtn" class="ghost">🛒 <b id="cartCount">0</b></button>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="tag">ELECTRONICS • DIY • TECH</p>
+    <h1>CLTX4<br><span>MARKETPLACE</span></h1>
+    <p>Electronics, components and tech gear. Browse the catalog and send an inquiry.</p>
+    <div class="search"><span>⌕</span><input id="search" placeholder="Search products..."></div>
+  </section>
+
+  <section class="toolbar">
+    <div><b id="resultCount">0</b> products</div>
+    <select id="sort">
+      <option value="new">Newest</option>
+      <option value="low">Price: Low → High</option>
+      <option value="high">Price: High → Low</option>
+    </select>
+  </section>
+
+  <section id="products" class="grid"></section>
+  <div id="empty" class="empty" hidden>No products found.</div>
+
+  <section class="paymentBox">
+    <p class="tag">PAYMENT & CONTACT</p>
+    <h2>Available Options</h2>
+    <div class="optionGrid">
+      <a class="option" href="#" onclick="return openPayment('gcash')">
+        <strong>GCash</strong><span>09661821176</span>
+      </a>
+      <a class="option" href="#" onclick="return openPayment('paypal')">
+        <strong>PayPal</strong><span>bracenoclint@gmail.com</span>
+      </a>
+      <a class="option" href="#" onclick="return openPayment('messenger1')">
+        <strong>Messenger</strong><span>Cltx Pros</span>
+      </a>
+      <a class="option" href="#" onclick="return openPayment('messenger2')">
+        <strong>Messenger</strong><span>Clint Pio Manuel XBraceno</span>
+      </a>
+      <a class="option" href="#" onclick="return openPayment('facebook')">
+        <strong>Facebook</strong><span>Cltx Pros</span>
+      </a>
+      <a class="option" href="#" onclick="return openPayment('tiktok')">
+        <strong>TikTok</strong><span>CLTX4</span>
+      </a>
+      <a class="option" href="#" onclick="return openPayment('instagram')">
+        <strong>Instagram</strong><span>Clinxk_1</span>
+      </a>
+    </div>
+    <p class="unavailable">Unavailable: Shopee • TikTok Shop • Lazada (temporarily unavailable)</p>
+  </section>
+</main>
+
+<footer>
+  <b>CLTX4</b> • Electronics Marketplace<br>
+  <small>For legitimate electronics and DIY projects.</small>
+</footer>
+
+<dialog id="productDialog">
+  <button class="close" onclick="productDialog.close()">×</button>
+  <img id="dImg" alt="">
+  <div class="dialogBody">
+    <p id="dCategory" class="tag"></p>
+    <h2 id="dName"></h2>
+    <div id="dPrice" class="price"></div>
+    <p id="dDesc"></p>
+    <p id="dStock" class="stock"></p>
+    <div class="actions">
+      <a id="inquire" class="primary" target="_blank">💬 Inquire</a>
+      <button id="addBtn" class="secondary">＋ Add to list</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="cartDialog">
+  <button class="close" onclick="cartDialog.close()">×</button>
+  <div class="dialogBody">
+    <p class="tag">INQUIRY LIST</p>
+    <h2>Your selected items</h2>
+    <div id="cartItems"></div>
+    <a id="cartInquire" class="primary" target="_blank">💬 Send inquiry</a>
+  </div>
+</dialog>
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
